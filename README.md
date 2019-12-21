@@ -75,5 +75,5 @@ Redis其实还能够支持消息队列的应用，但其读写效率是不及其
 Redis事务不像DB的事务这么“安全”，也不支持回滚，所以不应当过多的使用。因为这块我没怎么使用过，详见[官方文档](https://redis.io/topics/transactions)
 
 # 参考资料
-[Redis官方文档](https://redis.io/documentation)
-[阿里云Redis开发规范](https://www.infoq.cn/article/K7dB5AFKI9mr5Ugbs_px)
+- [Redis官方文档](https://redis.io/documentation)
+- [阿里云Redis开发规范](https://www.infoq.cn/article/K7dB5AFKI9mr5Ugbs_px)
