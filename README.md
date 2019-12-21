@@ -24,10 +24,8 @@ ps：通常可采用hash的方式分割大key
 ### - 避免频繁对string做append
 可以考虑使用list进行替代
 ### - 集合类操作
-	- O（n）指令应注意
-对于set，zset，list，hash等集合类，应注意O（n）命令对于性能的影响。通常应该避免直接使用O（n）指令，可用HSCAN，SSCAN，ZSCAN进行渐进操作，防止命令的阻塞
-	- 渐进式删除
-不应该直接使用del，而应该自己写脚本一点点的删除
+- O（n）指令应注意。对于set，zset，list，hash等集合类，应注意O（n）命令对于性能的影响。通常应该避免直接使用O（n）指令，可用HSCAN，SSCAN，ZSCAN进行渐进操作，防止命令的阻塞
+- 渐进式删除。不应该直接使用del，而应该自己写脚本一点点的删除
 ### - 禁用危险命令
 keys、flushall、flushdb......这种不用多说，一来直接Redis就懵圈了，人也楞了
 ### - 合理利用Pipeline模式
@@ -38,13 +36,13 @@ keys、flushall、flushdb......这种不用多说，一来直接Redis就懵圈�
 ### - 避免不必要的指令
 如部分Redis Client会有TestOnBorrow之类的探测指令，在没有特殊要求的情况下应当避免此类指令，以减小redis负载和网络压力
 ### - 对Lua应当做特殊要求
-	- 所有key都应该由KEYS数组来传递
-	- 所有value都应该由ARGS数组来传递
-	- 所有key，必须在1个slot上
+- 所有key都应该由KEYS数组来传递
+- 所有value都应该由ARGS数组来传递
+- 所有key，必须在1个slot上
 ### - 性能查询指令
-	- slowlog get，查询慢命令
-	- info commandstats，查询执行过的命令信息，包含用时和次数等
-	- client list，查询引起阻塞的命令
+- slowlog get，查询慢命令
+- info commandstats，查询执行过的命令信息，包含用时和次数等
+- client list，查询引起阻塞的命令
 
 
 # 客户端使用
