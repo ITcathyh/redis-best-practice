@@ -81,3 +81,4 @@ Redis事务不像DB的事务这么“安全”，也不支持回滚，所以不�
 # 参考资料
 - [Redis官方文档](https://redis.io/documentation)
 - [阿里云Redis开发规范](https://www.infoq.cn/article/K7dB5AFKI9mr5Ugbs_px)
+- []([Random notes on improving the Redis LRU algorithm](http://antirez.com/news/109))
