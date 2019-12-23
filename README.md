@@ -71,6 +71,10 @@ Redis其实还能够支持消息队列的应用，但其读写效率是不及其
 - volatile-random:随机删除过期键，直到腾出⾜够空间为⽌
 - volatile-ttl：根据键值对象的ttl属性，删除最近将要过期数据。如果没有，回退到noeviction策略
 - noeviction：不会剔除任何数据，拒绝所有写⼊操作并返回客⼾端错误信息"(error) OOM command not allowed when used memory"，此时Redis只响应读操作
+- 4.0后推出的allkey-lfu和volatile-lfu
+	- 可以认为这是对于lru算法的进一步改进
+	- allkey-lfu：从所有键中驱逐使用频率最少的键
+	- volatile-lfu：从所有配置了过期时间的键中驱逐使用频率最少的键
 ### 不滥用Redis事务
 Redis事务不像DB的事务这么“安全”，也不支持回滚，所以不应当过多的使用。因为这块我没怎么使用过，详见[官方文档](https://redis.io/topics/transactions)
 
